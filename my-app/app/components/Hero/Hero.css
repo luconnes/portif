@@ -1,0 +1,21 @@
+.hero-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#020617;
+}
+
+.hero-content{
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:5rem;
+    color:white;
+}
+
+.hero-content p{
+    color:#94a3b8;
+    margin-top:20px;
+}
