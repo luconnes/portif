@@ -1,21 +1,40 @@
-.hero-container{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#020617;
+.hero-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #020617;
+    padding: 0 24px; /* Evita que o texto encoste nas bordas laterais do celular */
+    box-sizing: border-box;
 }
 
-.hero-content{
-    text-align:center;
+.hero-content {
+    text-align: center;
+    width: 100%;
 }
 
-.hero-content h1{
-    font-size:5rem;
-    color:white;
+.hero-content h1 {
+    font-size: 5rem;
+    color: white;
 }
 
-.hero-content p{
-    color:#94a3b8;
-    margin-top:20px;
+.hero-content p {
+    color: #94a3b8;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   ADICIONADO: CONFIGURAÇÃO PARA CELULARES (MÁXIMO 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.8rem; /* Reduz de 5rem para caber na tela sem quebrar de forma bizarra */
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Tamanho de texto confortável para leitura mobile */
+        margin-top: 16px;
+    }
 }

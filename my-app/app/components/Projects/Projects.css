@@ -1,110 +1,103 @@
-.projects-section{
-
-    min-height:100vh;
-
-    padding:120px 100px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-    linear-gradient(
+.projects-section {
+    min-height: 100vh;
+    padding: 120px 100px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
         180deg,
         #0f172a 0%,
         #111827 50%,
         #0b1120 100%
     );
+    box-sizing: border-box; /* Garante que os paddings não estorem a largura */
 }
 
-.projects-section::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:400px;
-    height:400px;
-
-    background:#2563eb;
-
-    border-radius:50%;
-
-    filter:blur(180px);
-
-    opacity:0.08;
-
-    top:0;
-    right:-100px;
+.projects-section::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #2563eb;
+    border-radius: 50%;
+    filter: blur(180px);
+    opacity: 0.08;
+    top: 0;
+    right: -100px;
 }
 
-.projects-section h2{
-
-    font-size:4rem;
-
-    color:white;
-
-    margin-bottom:80px;
-
-    text-align:center;
-
-    position:relative;
-
-    z-index:2;
+.projects-section h2 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 80px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
-.projects-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit, minmax(320px, 1fr));
-
-    gap:40px;
-
-    position:relative;
-
-    z-index:2;
+.projects-grid {
+    display: grid;
+    /* Alterado levemente o minmax de 320px para 280px para prevenir quebras em celulares muito pequenos */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 2;
 }
 
-.project-card{
-
-    padding:40px;
-
-    border-radius:25px;
-
-    background:rgba(255,255,255,0.03);
-
-    border:1px solid rgba(255,255,255,0.1);
-
-    transition:0.3s;
-
-    text-decoration:none;
-
-    cursor:pointer;
-
-    backdrop-filter:blur(10px);
+.project-card {
+    padding: 40px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
 }
 
-.project-card:hover{
-
-    transform:translateY(-10px);
-
-    background:rgba(255,255,255,0.06);
+.project-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.06);
 }
 
-.project-card h3{
-
-    color:white;
-
-    font-size:1.8rem;
-
-    margin-bottom:20px;
+.project-card h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
-.project-card p{
+.project-card p {
+    color: #cbd5e1;
+    line-height: 1.8;
+}
 
-    color:#cbd5e1;
+/* ==========================================================================
+   ADICIONADO: CONFIGURAÇÃO PARA CELULARES (MÁXIMO 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 80px 24px; /* Reduz o espaçamento gigante das laterais no celular */
+    }
 
-    line-height:1.8;
+    .projects-section h2 {
+        font-size: 2.5rem; /* Diminui o título da seção de projetos */
+        margin-bottom: 40px; /* Reduz a distância para os cards */
+    }
+
+    .projects-grid {
+        gap: 24px; /* Deixa os cartões um pouco mais próximos verticalmente */
+    }
+
+    .project-card {
+        padding: 24px; /* Reduz o preenchimento interno do cartão para sobrar mais espaço para os textos */
+    }
+
+    .project-card h3 {
+        font-size: 1.5rem; /* Diminui levemente o título do projeto */
+        margin-bottom: 12px;
+    }
+
+    .project-card p {
+        font-size: 0.95rem; /* Tamanho de texto otimizado para telas pequenas */
+    }
 }

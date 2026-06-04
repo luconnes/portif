@@ -1,114 +1,107 @@
-.contact-section{
-
-    min-height:60vh;
-
-    padding:120px 100px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-    linear-gradient(
+.contact-section {
+    min-height: 60vh;
+    padding: 120px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
         180deg,
         #0b1120 0%,
         #071029 50%,
         #020617 100%
     );
+    box-sizing: border-box;
 }
 
-.contact-section::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:400px;
-    height:400px;
-
-    background:#7c3aed;
-
-    border-radius:50%;
-
-    filter:blur(180px);
-
-    opacity:0.08;
-
-    bottom:-100px;
-    left:-100px;
+.contact-section::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #7c3aed;
+    border-radius: 50%;
+    filter: blur(180px);
+    opacity: 0.08;
+    bottom: -100px;
+    left: -100px;
 }
 
-.contact-section h2{
-
-    font-size:4rem;
-
-    color:white;
-
-    margin-bottom:30px;
-
-    position:relative;
-
-    z-index:2;
+.contact-section h2 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
 }
 
-.contact-section p{
-
-    color:#cbd5e1;
-
-    margin-bottom:40px;
-
-    font-size:1.2rem;
-
-    position:relative;
-
-    z-index:2;
+.contact-section p {
+    color: #cbd5e1;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
 }
 
-.contact-links{
-
-    display:flex;
-
-    gap:30px;
-
-    position:relative;
-
-    z-index:2;
+.contact-links {
+    display: flex;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
 }
 
-.contact-links a{
-
-    display:flex;
-    align-items:center;
-
-    gap:12px;
-
-    padding:15px 30px;
-
-    border-radius:40px;
-
-    text-decoration:none;
-
-    color:white;
-
-    border:1px solid rgba(255,255,255,0.1);
-
-    background:rgba(255,255,255,0.03);
-
-    transition:0.3s;
-
-    backdrop-filter:blur(10px);
+.contact-links a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.03);
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
 }
 
-.contact-links a:hover{
+.contact-links a:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.08);
+}
 
-    transform:translateY(-5px);
+/* ==========================================================================
+   ADICIONADO: CONFIGURAÇÃO PARA CELULARES (MÁXIMO 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 80px 24px; /* Diminui consideravelmente o recuo gigante das laterais */
+    }
 
-    background:rgba(255,255,255,0.08);
+    .contact-section h2 {
+        font-size: 2.5rem; /* Diminui o título de contato */
+        margin-bottom: 20px;
+    }
+
+    .contact-section p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .contact-links {
+        flex-direction: column; /* Transforma os botões horizontais em uma lista vertical */
+        gap: 16px; /* Diminui o espaço entre os botões */
+        width: 100%; /* Garante que ocupem a largura do container */
+        max-width: 320px; /* Evita que os botões fiquem esticados demais */
+    }
+
+    .contact-links a {
+        justify-content: center; /* Centraliza o texto e ícone dentro do botão no mobile */
+        padding: 12px 24px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }

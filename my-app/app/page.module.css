@@ -28,6 +28,7 @@
   justify-content: space-between;
   background-color: var(--foreground);
   padding: 120px 60px;
+  box-sizing: border-box; /* Garante que o padding não faça o container estourar a tela */
 }
 
 .intro {
@@ -36,6 +37,7 @@
   align-items: flex-start;
   text-align: left;
   gap: 24px;
+  width: 100%;
 }
 
 .intro h1 {
@@ -107,22 +109,43 @@ a.secondary {
   }
 }
 
+/* Regras para Celular (Telas de até 600px) */
 @media (max-width: 600px) {
   .main {
     padding: 48px 24px;
+    box-sizing: border-box;
   }
 
   .intro {
     gap: 16px;
+    width: 100%;
   }
 
   .intro h1 {
     font-size: 32px;
     line-height: 40px;
     letter-spacing: -1.92px;
+    max-width: 100%; /* Permite que o título ocupe a largura real do celular */
+  }
+
+  .intro p {
+    max-width: 100%; /* Evita que o texto ultrapasse a borda direita */
+  }
+
+  /* Transforma os botões em lista vertical no celular */
+  .ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .ctas a {
+    width: 100%; /* Faz o botão ocupar toda a largura disponível */
+    box-sizing: border-box;
   }
 }
 
+/* Modo Escuro (Dark Mode) */
 @media (prefers-color-scheme: dark) {
   .logo {
     filter: invert();

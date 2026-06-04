@@ -1,61 +1,64 @@
-.navbar{
-
-    width:100%;
-    height:80px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 60px;
-
-    position:fixed;
-    top:0;
-
-    background:rgba(2,6,23,0.8);
-
-    backdrop-filter:blur(10px);
-
-    border-bottom:1px solid rgba(255,255,255,0.1);
-
-    z-index:1000;
+.navbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    position: fixed;
+    top: 0;
+    background: rgba(2,6,23,0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    z-index: 1000;
+    box-sizing: border-box; /* Garante que o padding não jogue a barra para fora */
 }
 
-.logo{
-
-    color:white;
-
-    font-size:2rem;
-
-    font-weight:bold;
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-.nav-links{
-
-    display:flex;
-
-    gap:50px;
-
-    list-style:none;
+.nav-links {
+    display: flex;
+    gap: 50px;
+    list-style: none;
 }
 
-.nav-links a{
-
-    display:flex;
-    align-items:center;
-
-    gap:10px;
-
-    color:#cbd5e1;
-
-    text-decoration:none;
-
-    font-size:1.1rem;
-
-    transition:0.3s;
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
 }
 
-.nav-links a:hover{
+.nav-links a:hover {
+    color: white;
+}
 
-    color:white;
+/* ==========================================================================
+   ADICIONADO: CONFIGURAÇÃO PARA CELULARES (MÁXIMO 640px)
+   ========================================================================== */
+@media (max-width: 640px) {
+    .navbar {
+        padding: 0 20px; /* Reduz o padding lateral de 60px para 20px no celular */
+        height: 70px; /* Barra ligeiramente mais fina para aproveitar a tela */
+    }
+
+    .logo {
+        font-size: 1.4rem; /* Diminui o tamanho do seu nome/logo */
+    }
+
+    .nav-links {
+        gap: 16px; /* Reduz o espaçamento entre "Sobre", "Projetos" e "Contato" */
+    }
+
+    .nav-links a {
+        font-size: 0.95rem; /* Ajusta o tamanho da fonte para os links caberem lado a lado */
+        gap: 6px; /* Diminui o espaço entre o ícone e o texto do link */
+    }
 }
